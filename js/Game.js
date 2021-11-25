@@ -45,14 +45,14 @@ class Game {
     form.titleImg.class("gameTitleAfterEffect");
 
     //C39
-    this.resetTitle.html("Reset Game");
+    this.resetTitle.html("Reiniciar juego");
     this.resetTitle.class("resetText");
     this.resetTitle.position(width / 2 + 200, 40);
 
     this.resetButton.class("resetButton");
     this.resetButton.position(width / 2 + 230, 100);
 
-    this.leadeboardTitle.html("Leaderboard");
+    this.leadeboardTitle.html("Puntuación");
     this.leadeboardTitle.class("resetText");
     this.leadeboardTitle.position(width / 3 - 60, 40);
 
@@ -74,13 +74,13 @@ class Game {
 
       this.showLeaderboard();
 
-      //index of the array
+      //índice de la matriz
       var index = 0;
       for (var plr in allPlayers) {
-        //add 1 to the index for every loop
+        //agrega 1 al índice para cada bucle
         index = index + 1;
 
-        //use data form the database to display the cars in x and y direction
+        //utilizar los datos de la base de datos para mostrar los autos en las direcciones x e y
         var x = allPlayers[plr].positionX;
         var y = height - allPlayers[plr].positionY;
 
@@ -92,12 +92,12 @@ class Game {
           fill("red");
           ellipse(x, y, 60, 60);
 
-          // Changing camera position in y direction
+          // cambiar la posición de la cámara en la dirección y
           camera.position.y = cars[index - 1].position.y;
         }
       }
 
-      // handling keyboard events
+      //  manejando eventos teclado
       this.handlePlayerControls();
 
       drawSprites();
@@ -113,7 +113,7 @@ class Game {
       (players[0].rank === 0 && players[1].rank === 0) ||
       players[0].rank === 1
     ) {
-      // &emsp;    This tag is used for displaying four spaces.
+      // &emsp;    esta etiqueta se utiliza para mostrar cuatro espacios
       leader1 =
         players[0].rank +
         "&emsp;" +
